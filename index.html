@@ -4,6 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Savon Écolo | Abdoul Rachid BISSARE</title>
+    <meta name="description" content="Découvrez Savon Écolo, une gamme de savons artisanaux éco-responsables créée par Abdoul Rachid BISSARE. Des produits naturels et durables pour prendre soin de votre peau tout en respectant la planète.">
+    <meta name="author" content="Abdoul Rachid BISSARE">
+    <meta name="keywords" content="savon bio, savon naturel, cosmétique eco-responsable, savon artisanal, savon écologique">
+    
+    <!-- Sécurité -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self' https:; style-src 'self' 'unsafe-inline' https:; script-src 'self' 'unsafe-inline' https:; img-src 'self' https: data:;">
+    <meta http-equiv="X-Frame-Options" content="DENY">
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
     
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="image/produit.png">
@@ -13,14 +21,16 @@
     <!-- Bootstrap 5 CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <!-- Préchargement des ressources critiques -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;600;700&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;600;700&display=swap" media="print" onload="this.media='all'">
     
-    <!-- FontAwesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <!-- FontAwesome - Chargement différé -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" media="print" onload="this.media='all'">
 
-    <!-- AOS Library -->
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- AOS Library - Chargement différé -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" media="print" onload="this.media='all'">
     
     <style>
         :root {
@@ -261,12 +271,27 @@
 </head>
 <body>
     <!-- Scroll to Top Button -->
-    <div class="scroll-to-top" id="scrollToTop">
+    <div class="scroll-to-top" id="scrollToTop" role="button" aria-label="Retour en haut de page">
         <i class="fas fa-arrow-up"></i>
     </div>
 
-    <!-- Hero Section -->
-    <section class="hero-section" id="home">
+    <!-- Navigation -->
+    <header>
+        <nav class="visually-hidden">
+            <ul>
+                <li><a href="#home">Accueil</a></li>
+                <li><a href="#about">À propos</a></li>
+                <li><a href="#style">Style</a></li>
+                <li><a href="#gallery">Galerie</a></li>
+                <li><a href="#featured">Créations phares</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero-section" id="home">
         <div class="container">
             <div class="row">
                 <div class="col-12 hero-content" data-aos="fade-up">
@@ -284,7 +309,7 @@
             <div class="row justify-content-center">
                 <div class="col-lg-8 text-center">
                     <h2 class="section-title">Qui suis-je ?</h2>
-                    <img src="image/photo-profil.png" alt="Abdoul Rachid BISSARE" class="profile-img">
+                    <img src="image/photo-profil.png" alt="Abdoul Rachid BISSARE" class="profile-img" loading="lazy">
                     <p class="lead">Je suis Abdoul Rachid BISSARE, artiste créatif passionné par la fusion entre nature, design et innovation. Savon Écolo est mon projet d'art éthique, un hommage à la beauté responsable et au geste simple de prendre soin de soi tout en respectant la planète.</p>
                 </div>
             </div>
@@ -340,7 +365,7 @@
                 <!-- Product 1 -->
                 <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="100">
                     <div class="card product-card">
-                        <img src="image/produit.png" alt="Savon Écolo – Pureté">
+                        <img src="image/produit.png" alt="Savon Écolo – Pureté - Savon naturel aux huiles essentielles" loading="lazy" width="300" height="200">
                         <div class="card-body">
                             <h5 class="card-title">Savon Écolo – Pureté</h5>
                             <p class="card-text">Un savon aux huiles essentielles naturelles pour une peau douce et hydratée.</p>
@@ -424,6 +449,7 @@
             </div>
         </div>
     </section>
+    </main>
 
     <!-- Footer -->
     <footer class="text-center text-lg-start" id="contact">
@@ -431,15 +457,17 @@
             <div class="row">
                 <div class="col-lg-8 mx-auto text-center">
                     <h4 class="mb-4">Merci de découvrir mon univers artistique.</h4>
-                    <a href="https://drive.google.com/drive/folders/1JUueBNhvyR2pKVQpr6qvOcCg5AbtVvS9?usp=sharing" class="btn btn-primary mb-4">Télécharger le projet</a>
-                    <p>Abdoul Rachid BISSARE</p>
-                    <p>rachidbissare@gmail.com</p>
-                    <div class="social-icons mb-4">
-                        <a href="#"target="_blank"><i class="fab fa-instagram"></i></a>
-                        <a href="https://www.facebook.com/profile.php?id=61580417747485" target="_blank"><i class="fab fa-facebook"></i></a>
-                        <a href="#" target="_blank"><i class="fab fa-pinterest"></i></a>
-                        <a href="https://linkedin.com/in/rhdkhalil104" target="_blank"><i class="fab fa-linkedin"></i></a>
-                    </div>
+                    <a href="https://drive.google.com/drive/folders/1JUueBNhvyR2pKVQpr6qvOcCg5AbtVvS9?usp=sharing" class="btn btn-primary mb-4" aria-label="Télécharger le projet complet">Télécharger le projet</a>
+                    <address>
+                        <p>Abdoul Rachid BISSARE</p>
+                        <p><a href="mailto:rachidbissare@gmail.com">rachidbissare@gmail.com</a></p>
+                    </address>
+                    <nav class="social-icons mb-4" aria-label="Réseaux sociaux">
+                        <a href="#" target="_blank" rel="noopener" aria-label="Suivez-nous sur Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.facebook.com/profile.php?id=61580417747485" target="_blank" rel="noopener" aria-label="Suivez-nous sur Facebook"><i class="fab fa-facebook"></i></a>
+                        <a href="#" target="_blank" rel="noopener" aria-label="Suivez-nous sur Pinterest"><i class="fab fa-pinterest"></i></a>
+                        <a href="https://linkedin.com/in/rhdkhalil104" target="_blank" rel="noopener" aria-label="Suivez-nous sur LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    </nav>
                     <p class="small">© 2025 Abdoul Rachid BISSARE – Tous droits réservés.</p>
                 </div>
             </div>
@@ -567,14 +595,11 @@
         </div>
     </div>
 
-    <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Scripts essentiels -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" defer></script>
     
-    <!-- Font Awesome -->
-    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
-    
-    <!-- AOS Library -->
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <!-- Scripts non-critiques chargés en différé -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js" defer></script>
     
     <!-- Custom JS -->
     <script>
